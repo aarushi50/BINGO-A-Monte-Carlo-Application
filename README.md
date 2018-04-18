@@ -1,4 +1,4 @@
-# BINGO - An application of Monte Carlo Simulation: 
+# BINGO - An application of Monte Carlo Simulation
 
 ## Team Member(s):
 Aarushi Mishra
