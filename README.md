@@ -29,7 +29,7 @@ The whole environment of the game can be divided into two parts. The varibales o
 
 ## Hypothesis or hypotheses before running the simulation:
 
-The pay-out amount for each windfall must be double the price of the ticket. 
+#### "The pay-out amount for each windfall must be double the price of the ticket." 
 
 ## Analytical Summary of your findings: (e.g. Did you adjust the scenario based on previous simulation outcomes?  What are the management decisions one could make from your simulation's output, etc.)
 
