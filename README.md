@@ -16,14 +16,14 @@ The whole environment of the game can be divided into two parts. The varibales o
 
 1. For ticket/card generation:
 
-  a. Numbers printed on the ticket -> Uniform
-  b. Position of numbers on the ticket->  Uniform
-  c. Lucky number for lucky star ticket -> Uniform
+a. Numbers printed on the ticket -> Uniform
+b. Position of numbers on the ticket->  Uniform
+c. Lucky number for lucky star ticket -> Uniform
 
 2. For Game:
 
-  a. Number of players -> Discrete Random
-  b. The number called out by the caller -> Uniform
+a. Number of players -> Discrete Random
+b. The number called out by the caller -> Uniform
 
 
 
