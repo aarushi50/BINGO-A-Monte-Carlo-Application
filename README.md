@@ -45,4 +45,10 @@ For exploring the topic and related factors:
   http://www.freebingoticket.com/tickets/10407 <br />
   https://www.statista.com/statistics/203432/bingo-gross-gaming-sales-in-the-uk/ <br />
 
+For coding:
+
+https://docs.python.org/3/ <br />
+https://www.python.org/doc/ <br />
+http://docs.python-guide.org/en/latest/writing/documentation/  <br />
+"Programming in Python 3", 2nd Edition, by Mark Summerfield, ©2010
 
