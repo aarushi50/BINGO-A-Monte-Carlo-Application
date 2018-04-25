@@ -16,14 +16,14 @@ The whole environment of the game can be divided into two parts. The varibales o
 
 1. For ticket/card generation:
 
-a. Numbers printed on the ticket -> Uniform <br />
-b. Position of numbers on the ticket->  Uniform
-c. Lucky number for lucky star ticket -> Uniform
+  a. Numbers printed on the ticket -> Uniform <br />
+  b. Position of numbers on the ticket->  Uniform <br />
+  c. Lucky number for lucky star ticket -> Uniform <br />
 
 2. For Game:
 
-a. Number of players -> Discrete Random
-b. The number called out by the caller -> Uniform
+  a. Number of players -> Discrete Random <br />
+  b. The number called out by the caller -> Uniform <br />
 
 
 
@@ -39,10 +39,10 @@ The pay-out amount for each windfall must be double the price of the ticket.
 
 For exploring the topic and related factors:
 
-  https://en.wikipedia.org/wiki/Bingo_(United_Kingdom)
-  https://en.wikipedia.org/wiki/Bingo_(U.S.)
-  http://bingonut.net/windfall-gain-bingo.html
-  http://www.freebingoticket.com/tickets/10407
-  https://www.statista.com/statistics/203432/bingo-gross-gaming-sales-in-the-uk/
+  https://en.wikipedia.org/wiki/Bingo_(United_Kingdom) <br />
+  https://en.wikipedia.org/wiki/Bingo_(U.S.) <br />
+  http://bingonut.net/windfall-gain-bingo.html <br />
+  http://www.freebingoticket.com/tickets/10407 <br />
+  https://www.statista.com/statistics/203432/bingo-gross-gaming-sales-in-the-uk/ <br />
 
 
