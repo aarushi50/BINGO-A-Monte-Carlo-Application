@@ -10,7 +10,6 @@ A Bingo Club is planning to introduce two new windfalls to attract more particip
 The aim of the this simulation is to inform the decision of the club on what pay-out amount should be designated for each windfall gain.
 
 ## Simulation's variables of uncertainty
-List and describe your simulation's variables of uncertainty (where you're using pseudo-random number generation). For each such variable, how did you decide the range and probability distribution to use?  Do you think it's a good representation of reality?
 
 The whole environment of the game can be divided into two parts. The varibales of uncertainty for those two parts are:
 
@@ -34,6 +33,16 @@ The whole environment of the game can be divided into two parts. The varibales o
 ## Analytical Summary of your findings: (e.g. Did you adjust the scenario based on previous simulation outcomes?  What are the management decisions one could make from your simulation's output, etc.)
 
 ## Instructions on how to use the program:
+
+As of 04/25 : <br />
+
+ticket_genertor.py creates and displays a th etype of ticket specified. <br />
+The ticket generated goes strictly with the design of an actual ticket. Each generated ticket has 3 rows, 9 columns, 15 non duplicate numbers, 5 numbers in each row, 4 spaces in each row.<br />
+To see a sample ticket, simply run the program.<br />
+<br />
+bingo_game.py allows to find the winners for usual 4 winning combinations (not windfalls yet). Presently, a hard coded ticket is used to test the functionality of the class.<br />
+To see how the games goes, simply run the file.<br />
+
 
 ## All Sources Used:
 
