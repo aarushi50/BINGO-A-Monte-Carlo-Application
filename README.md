@@ -36,12 +36,12 @@ The whole environment of the game can be divided into two parts. The varibales o
 
 As of 04/25 : <br />
 
-ticket_genertor.py creates and displays a th etype of ticket specified. <br />
+ticket_genertor.py creates and displays the type of ticket specified. <br />
 The ticket generated goes strictly with the design of an actual ticket. Each generated ticket has 3 rows, 9 columns, 15 non duplicate numbers, 5 numbers in each row, 4 spaces in each row.<br />
 To see a sample ticket, simply run the program.<br />
 <br />
 bingo_game.py allows to find the winners for usual 4 winning combinations (not windfalls yet). Presently, a hard coded ticket is used to test the functionality of the class.<br />
-To see how the games goes, simply run the file.<br />
+To see how the game goes, simply run the file.<br />
 
 
 ## All Sources Used:
