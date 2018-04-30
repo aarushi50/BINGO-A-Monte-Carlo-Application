@@ -8,11 +8,11 @@ class BingoPlayer:
     that describe the player.
     """
 
-    def __init__(self, name, generated_ticket_array, ticket_type, money_paid):
+    def __init__(self, name, generated_ticket_array, ticket_type):
         self.name = name
         self.generated_ticket_array = generated_ticket_array
         self.ticket_type = ticket_type
-        self.money_paid = money_paid
+        # self.money_paid = money_paid
 
 
 class Ticket:
@@ -27,17 +27,18 @@ class Ticket:
     def __init__(self, ttype):
         self.ttype = ttype
 
+
         ticket = Ticket.basic_ticket()
 
         if self.ttype == 'NT':
-            self.final_ticket = Ticket.normal_ticket(self,ticket)
+            self.final_ticket_with_details = Ticket.normal_ticket(self,ticket)
         elif self.ttype == 'ST':
-            self.final_ticket = Ticket.special_ticket(self,ticket)
+            self.final_ticket_with_details = Ticket.special_ticket(self,ticket)
         elif self.ttype == 'LT':
-            self.final_ticket = Ticket.lucky_star_ticket(self,ticket)
+            self.final_ticket_with_details = Ticket.lucky_star_ticket(self,ticket)
         else:
             print("Enter a valid ticket type")
-        print(self.final_ticket)
+        #print(self.final_ticket)
 
 
     # def __str__(self):
@@ -46,7 +47,7 @@ class Ticket:
     def basic_ticket():
 
         # equate each column with initial ones place digit
-        a_ticket = np.zeros([4, 9], dtype=np.dtype("U3"))
+        a_ticket = np.zeros([3, 9], dtype=np.dtype("U3"))
         a_ticket[0:3, 0] = 0  # better to write like this or in a loop
         a_ticket[0:3, 1] = 1
         a_ticket[0:3, 2] = 2
@@ -56,7 +57,7 @@ class Ticket:
         a_ticket[0:3, 6] = 6
         a_ticket[0:3, 7] = 7
         a_ticket[0:3, 8] = 8
-        a_ticket[3,0] = ''
+        # a_ticket[3,0] = ''
         # select 4 random indexes of the ndarray in each row to equate them to ''
         index_row_0_list = [99]
         index_row_1_list = [99]
@@ -103,25 +104,28 @@ class Ticket:
                 if a_ticket[ii, jj] != '':
                     while duplicate:  # while loop is ensure no duplicates are selected in a ticket
                         z = str(randint(0, 9))
-                        zz = a_ticket[ii, jj] + z
+                        if a_ticket[ii, jj] == '0':
+                            zz = z
+                        else:
+                            zz = a_ticket[ii, jj] + z
                         if zz not in a_ticket[0:3, jj]:
                             a_ticket[ii, jj] = zz
                             duplicate = False
 
-                    if a_ticket[ii, jj] == '00':  # This condition replaces '00' with '10' since '00' is not valid
+                    if a_ticket[ii, jj] == '0':  # This condition replaces '0' with '10' since '0' is not valid
                         a_ticket[ii, jj] = '10'
 
         return a_ticket
 
     def normal_ticket(self, base_ticket):
-        nticket = base_ticket
-        nticket[3, 0] = 'NT'
-        return nticket
+        # nticket = base_ticket
+        # nticket[3, 0] = 'NT'
+        return base_ticket, self.ttype, '', 10
 
     def special_ticket(self,base_ticket):
-        sticket = base_ticket
-        sticket[3, 0] = 'ST'
-        return sticket
+        # sticket = base_ticket
+        #sticket[3, 0] = 'ST'
+        return base_ticket, self.ttype, '', 50
 
     def lucky_star_ticket(self, base_ticket):
         lticket_list = []
@@ -133,18 +137,19 @@ class Ticket:
                     lticket_list.append(lticket[x,y])
 
         lucky_star_number = choice(lticket_list)
-        lticket[3, 0] = 'LT'
-        lticket[3, 1] = lucky_star_number
-        return lticket
+        # lticket[3, 0] = 'LT'
+        # lticket[3, 1] = lucky_star_number
+        return lticket, self.ttype, lucky_star_number, 100
 
 
-obj1 = Ticket('NT')
-print("--------------------------------")
-obj2 = Ticket('ST')
-print("--------------------------------")
-obj3 = Ticket('LT')
-print("--------------------------------")
-
-player1 = BingoPlayer('Jon', obj1, 'NT', 10)
-print(player1.generated_ticket_array)
+# obj1 = Ticket('NT')
+# print(obj1.final_ticket)
+# print("--------------------------------")
+# obj2 = Ticket('ST')
+# print("--------------------------------")
+# obj3 = Ticket('LT')
+# print("--------------------------------")
+# #
+# player1 = BingoPlayer('Jon', obj1, 'NT', 10)
+# print(player1.generated_ticket_array)
 
