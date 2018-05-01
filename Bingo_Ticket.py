@@ -2,19 +2,6 @@ from random import choice, randint
 import numpy as np
 
 
-class BingoPlayer:
-    """
-    The instance of this class represents each player who participates in the game of Bingo. It has few attributes
-    that describe the player.
-    """
-
-    def __init__(self, name, generated_ticket_array, ticket_type):
-        self.name = name
-        self.generated_ticket_array = generated_ticket_array
-        self.ticket_type = ticket_type
-        # self.money_paid = money_paid
-
-
 class Ticket:
     """
     Each instance of this class is a ticket that a player buys to participate in the game. The generated ticket
@@ -26,7 +13,6 @@ class Ticket:
 
     def __init__(self, ttype):
         self.ttype = ttype
-
 
         ticket = Ticket.basic_ticket()
 

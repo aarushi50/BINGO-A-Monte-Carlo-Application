@@ -1,17 +1,16 @@
 from random import *
-import numpy as np
 
-ab = np.array([['',    '12',   '',    '36',   '45',   '58',   '',    '',    '87'],
-               ['3',    '',    '',    '',   '41',   '',    '',    '77',   ''],
-               ['4',    '13',   '22',   '',    '40',   '56',   '61',   '',    '88']], dtype=np.dtype("U3"))
-
-
-a1 = np.array([['',    '11',   '',    '36',   '',   '58',   '',    '',    '87'],
-               ['1',    '12',    '',    '38',   '41',   '',    '',    '77',   '89'],
-               ['',    '13',   '22',   '',    '40',   '56',   '61',   '',    '']],dtype=np.dtype("U3"))
-
-
-t_dict = {1: (ab, 'NT', '', 10), 2: (a1, 'LT', '', 100)}
+# ab = np.array([['',    '12',   '',    '36',   '45',   '58',   '',    '',    '87'],
+#                ['3',    '',    '',    '',   '41',   '',    '',    '77',   ''],
+#                ['4',    '13',   '22',   '',    '40',   '56',   '61',   '',    '88']], dtype=np.dtype("U3"))
+#
+#
+# a1 = np.array([['',    '11',   '',    '36',   '',   '58',   '',    '',    '87'],
+#                ['1',    '12',    '',    '38',   '41',   '',    '',    '77',   '89'],
+#                ['',    '13',   '22',   '',    '40',   '56',   '61',   '',    '']],dtype=np.dtype("U3"))
+#
+#
+# t_dict = {1: (ab, 'NT', '', 10), 2: (a1, 'LT', '', 100)}
 
 
 class BingoGame:
@@ -20,10 +19,6 @@ class BingoGame:
     determine the winner for each winning combination, if windfall gain occurs to a player, money calculations
     involved, etc.
     """
-    # __lucky_wins = 0
-    # __winning_combination_status = [0,1,2,3] # 0 - corners, 1 - single line, 2 - double line, 4 - full house
-    # __row_status = [False, False, False]
-    # corner_status = False
 
     def __init__(self, ticket_dict):
         self.ticket_dict = ticket_dict  # card list is list of 2D ndarray
@@ -93,21 +88,7 @@ class BingoGame:
                 game_status = False
 
         self.unique_numbers_called_list = set(called_number_list)
-        print("GAME OVER!! \n")
-        print(" ")
-
-        # print("Game status :",game_status)
-        # print("House win :", full_house_win)
-        # print("Corner win :", corner_win)
-        # print("Single line win :", single_line_win)
-        # print("Double line win :", double_line_win)
-        # print("Numbers called : ", self.unique_called_number_list)
-        # print("Total number of call:", called_number_count)
-        # print("Lucky wins:", self.lucky_star_wins)
-
-
-        # TODO:do money calculation
-        # TODO: add code to store result values for creating some results
+        print("\n          !! GAME COMPLETE !!")
 
     def strike_off_lnum(self, a_array, lnum):
 
@@ -130,12 +111,13 @@ class BingoGame:
         else:
             if b_array[0][0] == '' or b_array[2][0] == '' or b_array[0][8] == '' or b_array[2][8] == '':
                 corner_status = None
-                print("Four corners not applicable")
+
+                print("         >>Four corners is not applicable")
                 self.total_payout_pergame[0] = 0
 
             elif b_array[0][0] == 'cut' and b_array[2][0] == 'cut' and b_array[0][8] == 'cut' and b_array[2][8] == 'cut':
                 corner_status = True
-                print(" Winner of Four Corners is found!")
+                print("         >>Winner of Four Corners is found!")
                 self.total_payout_pergame[0] = 30
             else:
                 corner_status = False
@@ -170,7 +152,7 @@ class BingoGame:
         if any(func_row_status):
             self.winners['Single Line'].append(ticket_Id)
             self.total_payout_pergame.append(20)
-            print("Single line winner found here!")
+            print("         >>Single line winner found!")
             return True
         else:
             return False
@@ -203,7 +185,7 @@ class BingoGame:
                 or (func_row_status[1] == True and func_row_status[2])):
             self.winners['Double Line'].append(ticket_Id)
             self.total_payout_pergame.append(40)
-            print("Double line winner found here!")
+            print("         >>Double line winner found!")
             return True
         else:
             return False
@@ -211,7 +193,6 @@ class BingoGame:
     def house_win(self,ticket_Id, b_array, ticket_type, lucky_star_num, called_num, called_num_count):
 
         house_status = True
-
         for i in range(0, 3, 1):
             for j in range(0, 9, 1):
                 if (b_array[i, j] == '') or (b_array[i, j] == 'cut'):
@@ -229,53 +210,65 @@ class BingoGame:
                 if called_num == lucky_star_num:
                     self.lucky_star_wins = self.lucky_star_wins + 1
                     self.total_payout_pergame.append(200)
-                    print("Congratulations!! You win full house with Jackpot! You are the Lucky Star!!")
+                    print("         >>Congratulations!! You win full house with Jackpot! You are the Lucky Star!!")
 
                 else:
-                    print("Winner of full house is found(Sorry! No jackpot!!)")
+                    print("         >>Winner of full house found! Hard Luck - No Jackpot this time")
                     self.total_payout_pergame.append(50)
             elif ticket_type == 'ST':
                 if called_num_count == 150:
                     self.bingo_bonus_wins = self.bingo_bonus_wins + 1
                     self.total_payout_pergame.append(100)
-                    print("Congratulations!! You win full house with Bingo Bonus! You are Special!!")
+                    print("         >>Congratulations!! You win full house with Bingo Bonus! You are Special!!")
                 else:
-                    print("Winner of full house is found(Sorry! No Bingo Bonus!)")
+                    print("         >>Winner of full house found! Hard Luck - No Bingo Bonus this time")
                     self.total_payout_pergame.append(50)
 
             else:
                 self.total_payout_pergame.append(50)
-                print("Winner of full house is found(no Bingo Bonus / Jackpot)")
-        # print("Stuck here!")
+                print("         >>Winner of normal ticket full house found!")
+
         return house_status
 
     def game_figures_brief(self):
+        self.total_profit = self.total_received_money - sum(self.total_payout_pergame)
+        print("                                 *******Brief Game Summary******* \n")
+        print("     > Total tickets sold:", self.total_tickets_sold)
+        print("     > Total money received: £", self.total_received_money)
+        print("     > Total payout: £", sum(self.total_payout_pergame))
+        print("     > Total profit: £", self.total_profit)
+        print("     > Lucky Star wins:", self.lucky_star_wins)
+        print("     > Bingo Bonus wins:", self.bingo_bonus_wins,"\n")
+
+    def game_figures_details(self):
 
         self.total_profit = self.total_received_money - sum(self.total_payout_pergame)
-        print(">>>>>>>Summary<<<<<<<<")
-        print("     Numbers called : ", self.unique_numbers_called_list)
-        print("     Total number of call:", self.called_number_count)
-        print("     Lucky Star wins:", self.lucky_star_wins)
-        print("     Bingo Bonus wins:", self.bingo_bonus_wins)
-        print("**Tickets sold summary:**")
-        print("     Normal tickets sold:", self.total_normal_tickets)
-        print("     Special tickets sold:", self.total_special_tickets)
-        print("     Lucky Star tickets sold:", self.total_lucky_star_tickets)
-        print("     Total tickets sold:", self.total_tickets_sold)
-        print("**Financial Summary:**")
-        print("     Total money received: $", self.total_received_money)
-        print("     Winner IDs:")
+        print("                                 *******Detailed Game Summary******* \n")
+        print("     > Numbers called : ", self.unique_numbers_called_list)
+        print("     > Total number of calls:", self.called_number_count)
+        print("     > Winner IDs:")
         for k, v in self.winners.items():
-            print("     ",k,"Winner is Player ID", v)
-        print("     Total payout: $", sum(self.total_payout_pergame))
-        print("     Total profit: $", self.total_profit)
-        print("----------------------------------------------------------")
+            print("         >>",k,"Winner is Player ID", v)
+        print("     > Lucky Star wins:", self.lucky_star_wins)
+        print("     > Bingo Bonus wins:", self.bingo_bonus_wins,"\n")
+        print("     > Tickets sold summary:")
+        print("         >> Normal tickets sold:", self.total_normal_tickets)
+        print("         >> Special tickets sold:", self.total_special_tickets)
+        print("         >> Lucky Star tickets sold:", self.total_lucky_star_tickets)
+        print("         >> Total tickets sold:", self.total_tickets_sold,"\n")
+        print("     > Financial Summary:")
+        print("         >> Total money received: £", self.total_received_money)
+        print("         >> Total payout: £", sum(self.total_payout_pergame))
+        print("         >> Total profit: £", self.total_profit, "\n \n")
 
     def return_values_for_stats(self):
         return len(self.ticket_dict), self.total_received_money, sum(self.total_payout_pergame), self.lucky_star_wins, \
                self.bingo_bonus_wins, self.total_profit
-
+#
+#
 # a = BingoGame(t_dict)
 # a.play_game()
-# print("----------------------------------------------------------")
+# # print("---------------------------------------------------------------------------------------------------")
 # a.game_figures_brief()
+# a.game_figures_details()
+#
