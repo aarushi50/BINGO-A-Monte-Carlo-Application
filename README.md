@@ -5,9 +5,26 @@ Aarushi Mishra
 
 # Monte Carlo Simulation Scenario & Purpose:
 
-A Bingo Club is planning to introduce two new windfalls to attract more participants. Windfall gain is any type of unusually high or abundant income that is sudden and/or unexpected.The profit perspective lies in the fact that it is highly uncertain whether a person will win the game choosing to play with special tickets for windfalls that cost higher than the usual tickets.
+A Bingo Club is planning to introduce two new windfalls to attract more participants. Windfall gain is any type of unusually high or abundant income that is sudden and/or unexpected.The profit perspective lies in the fact that it is highly uncertain whether a person will win the windfalls while the tickets for being eligible to win the windfalls cost higher than the usual tickets.
 
-The aim of the this simulation is to inform the decision of the club on what pay-out amount should be designated for each windfall gain.
+The aim of this simulation is to inform the decision of the club on what pay-out amount should be designated for each windfall gain so that club always earns some fair profit.
+
+## About The Game
+1. Types of ticket available: Normal Ticket - £ 10 , Lucky Star Ticket - £ 15 , Special Ticket - £ 25
+2. Winning Combinations:
+    a. Four Corners - £ 50 : All corner numbers are striked off <br />
+    b. Single Line - £ 40 : All numbers in any one row are striked off <br />
+    c. Double Line - £ 60 : All numbers any of the two rows are striked off <br />
+    d. Full House - £ 70 : If all the numbers are striked off <br />
+
+## Windfalls Being Introduced
+The windfalls are actually a variation of Full House win.
+
+1. Bingo Bonus
+A Lucky Star ticket has a randomly selected lucky number associated with it. Every lucky star ticket has it's own lucky number. A   player who buys this ticket and wins Full House such that the last number he striked off was the lucky number, he wins a Bingo Bonus worth £1000.
+
+2. Jackpot
+A Special ticket is same as a normal ticket but with higher cst prize. A player who buys this ticket and wins Full HOuse such that the last number he striked off is the 100th number called by the caller, he wins the Jackpot worth £10,000.  
 
 ## Simulation's variables of uncertainty
 
@@ -46,7 +63,7 @@ To see how the game goes, simply run the file.<br />
 
 ## All Sources Used:
 
-For exploring the topic and related factors:
+For exploring the topic and related aspects:
 
   https://en.wikipedia.org/wiki/Bingo_(United_Kingdom) <br />
   https://en.wikipedia.org/wiki/Bingo_(U.S.) <br />
@@ -59,5 +76,8 @@ For coding:
 https://docs.python.org/3/ <br />
 https://www.python.org/doc/ <br />
 http://docs.python-guide.org/en/latest/writing/documentation/  <br />
+https://docs.scipy.org/doc/numpy-1.14.0/reference/arrays.ndarray.html <br />
+https://pandas.pydata.org/pandas-docs/stable/generated/pandas.DataFrame.plot.html <br />
+https://github.com/iSchool-590PR-2018Spring/in-class-examples/blob/master/week_11_Efficiency.ipynb <br />
 "Programming in Python 3", 2nd Edition, by Mark Summerfield, ©2010
 
