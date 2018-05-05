@@ -50,7 +50,7 @@ The whole environment of the game can be divided into two parts. The variables o
 2. Minimum number of players in one game is 10.
 3. Maximum number of players in one game is 100.
 4. No coinciding winning occurs.
-5. This simulation is applicable to U.K. Bingo only.
+5. This simulation is applicable to British Bingo only.
 
 
 ## Hypothesis or hypotheses before running the simulation:
