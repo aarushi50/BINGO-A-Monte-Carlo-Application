@@ -28,6 +28,7 @@ A Lucky Star ticket has a randomly selected lucky number associated with it. Eve
 2. Jackpot
 A Special ticket is same as a normal ticket but with higher cost prize. A player who buys this ticket and wins Full House such that the last number he striked off is the 100th number called by the caller, he wins the Jackpot worth £10,000.  
 
+Note: Read the updated presentation slides for explanation and details.
 
 ## Simulation's variables of uncertainty
 
