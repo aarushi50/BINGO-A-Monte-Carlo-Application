@@ -154,6 +154,12 @@ class BingoGame:
 
     def four_corners(self, b_array: np.ndarray, prev_corner_status: bool, ticket_id: int) -> bool:
         """
+        This method receives an array(latest number striked off), previous value of corner win,
+        and ticket id as its parameter. This function checks if a ticket qualifies for 'four
+        corners" winning pay-out. Before declaring the winner of four corners, it also confirms
+        whether all the numbers that are striked off were actually called by the caller. If win
+        confirmed, it updates the pay-out list. If the winner of four corners is found, it returns
+        True otherwise, False.
 
         :param b_array: np.ndarray
         :param prev_corner_status: bool
@@ -191,6 +197,11 @@ class BingoGame:
 
     def one_line_win(self, b_array: np.ndarray, ticket_id: int) -> bool:
         """
+        This method receives an array(latest number striked off), and ticket id as its parameter.
+        This function checks if a ticket qualifies for 'single line" winning pay-out if all the
+        numbers in any one of the rows were called and striked off. If the win is confirmed, it
+        updates the pay-out list. If the winner of single line is found, it returns
+        True otherwise, False.
 
         :param b_array:
         :param ticket_id:
@@ -251,6 +262,11 @@ class BingoGame:
 
     def two_line_win(self, b_array: np.ndarray, ticket_id: int) -> bool:
         """
+        This method receives an array(latest number striked off), and ticket id as its parameter.
+        This function checks if a ticket qualifies for 'double line" winning pay-out if all the
+        numbers in any two of the rows were called and striked off. If the win is confirmed, it
+        updates the pay-out list. If the winner of double line is found, it returns
+        True otherwise, False.
 
         :param b_array:
         :param ticket_id:
@@ -314,6 +330,23 @@ class BingoGame:
 
     def house_win(self, ticket_id: int, b_array: np.ndarray, ticket_type: str, lucky_star_num: int,
                   called_num: int, called_num_count: int) -> bool:
+        """
+        This method receives ticket id, an array(latest number striked off), ticket type, the lucky
+        star number, latest called number(to determine if Bingo Bonus is won) and total count of called
+        number(to determine is jackpot is won)as its parameter.
+        This function checks if a ticket qualifies for 'full house" winning pay-out if all the
+        numbers in the ticket were called and striked off. It also determines if Bingo Bonus or Jackpot is
+        won by any participant.If the win is confirmed and updates the pay-out list accordingly.
+        If the winner of four corners is found, it returns True otherwise, False.
+
+        :param ticket_id: int
+        :param b_array: np.ndarray
+        :param ticket_type: str
+        :param lucky_star_num: int
+        :param called_num: int
+        :param called_num_count: int
+        :return: bool
+        """
 
         house_status = True         # status of full house win
 
