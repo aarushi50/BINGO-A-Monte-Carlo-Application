@@ -12,7 +12,7 @@ The aim of this simulation is to inform the decision of the club on what pay-out
 ### About The Game
 
 1. Every ticket has three rows and nine columns. The numbers on the ticket range from 1 to 90. There are total 15 numbers.
-2. Types of ticket available: Normal Ticket - £ 10 , Lucky Star Ticket - £ 15 , Special Ticket - £ 25
+2. Types of ticket available: Normal Ticket - £ 10, Lucky Star Ticket - £ 15, Special Ticket - £ 25
 3. Winning Combinations:
     a. Four Corners - £ 50 : All corner numbers are striked off <br />
     b. Single Line - £ 40 : All numbers in any one row are striked off <br />
