@@ -87,11 +87,13 @@ For exploring the topic and related aspects:
 
 For coding:
 
+"Programming in Python 3", 2nd Edition, by Mark Summerfield, ©2010 <br />
 https://docs.python.org/3/ <br />
 https://www.python.org/doc/ <br />
 http://docs.python-guide.org/en/latest/writing/documentation/  <br />
 https://docs.scipy.org/doc/numpy-1.14.0/reference/arrays.ndarray.html <br />
 https://pandas.pydata.org/pandas-docs/stable/generated/pandas.DataFrame.plot.html <br />
 https://github.com/iSchool-590PR-2018Spring/in-class-examples/blob/master/week_11_Efficiency.ipynb <br />
-"Programming in Python 3", 2nd Edition, by Mark Summerfield, ©2010
+https://stackoverflow.com/questions/287871/print-in-terminal-with-colors
+
 
