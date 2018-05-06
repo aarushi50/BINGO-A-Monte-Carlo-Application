@@ -7,7 +7,7 @@ import matplotlib.pyplot as plt
 """
 Instructions:
 > Run the program
-> Enter the number of size of simulation i.e. total number of Bingo games.
+> Enter the size of simulation i.e. total number of Bingo games.
 > Enter D / d if you wish to print detailed summary of each game
   OR Enter B / b if you wish to print brief summary of each game
   OR Enter N / n for not printing any summary (default).  
@@ -22,6 +22,13 @@ main_bingo_bonus_wins_list = []
 main_jackpot_wins_list = []
 main_profit_list = []
 
+# colored console output
+cyan_col = '\033[96m'
+yellow_col = '\033[93m'
+error_col = '\033[91m'
+head_col = '\033[94m'
+endc = '\033[0m'
+
 
 def start_simulation()-> None:
     """
@@ -30,7 +37,8 @@ def start_simulation()-> None:
     :return: None
     """
     print(" ")
-    print(" ******************************************Welcome to Bingo Simulation*********************************")
+    print(head_col + " ******************************************Welcome to Bingo Simulation************************"
+                     "*********" + endc)
     print(" ")
     print("     >Tickets Price List:")
     print("         >>Normal Ticket- £10 \n       >>Lucky Star Ticket - £15 \n       >>Special Ticket - £25")
@@ -40,16 +48,23 @@ def start_simulation()-> None:
     print("         >>Four Corners - £50 \n         >>Single Line - £40 \n         >>Double Line - £60 \n         "
           ">>Full House - $70 \n")
     print(" ")
-    print("             Buy Lucky Star Ticket And Get A Chance To Win The BINGO BONUS of  £1000")
+    print(cyan_col + "             Buy Lucky Star Ticket And Get A Chance To Win The BINGO BONUS of £1000" + endc)
     print(" ")
-    print("             Buy Special Ticket And Get A Chance To Win JACKPOT of £10,000 ")
-    print(" ")
-
-    ngames = int(input("Enter the number of games for this round of simulation "))
-    print("Number of games entered ", ngames)
+    print(yellow_col + "                 Buy Special Ticket And Get A Chance To Win JACKPOT of £10,000 " + endc)
     print(" ")
 
-    each_game_details = input("Do you wish to print Brief / Detailed / No Summary? (B / D / N)")
+    try:
+        ngames = int(input("     ->Enter the number of games for this round of simulation "))
+
+    except ValueError:
+        ngames = 0
+        print(error_col + " \n An error occurred due to invalid input. Try again!!")
+        quit()
+
+    print("     >>Number of games entered ", ngames)
+    print(" ")
+
+    each_game_details = input("     ->Do you wish to print Brief / Detailed / No Summary? (B / D / N)")
     if each_game_details not in ('B', 'b', 'D', 'd', 'N', 'n'):
         print("Invalid input! Details will not be printed")
     print("Lets begin the simulation.....")
