@@ -170,4 +170,4 @@ class BingoTicket:
 #
 # obj3 = BingoTicket('ST')
 # print(obj1)
-# print("--------------------------------")
+# print("-------------------------------")
